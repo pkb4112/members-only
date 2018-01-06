@@ -1,0 +1,17 @@
+<% if @posts %>
+<ul>
+  <%@posts.each do |post|%>
+  <li>
+    <%if logged_in? %>
+    <%= post.user.name %>
+    <%else%>
+    <%='Author Hidden' %>
+    <%end%>
+    </br>
+    <%= post.content %>
+  </li>
+<%end%>
+</ul>
+<%else%>
+<p>No posts!</p>
+<%end%>
